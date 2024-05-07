@@ -3,5 +3,6 @@ Repositório para trabalhos durante minha graduação em estatística na [ENCE](
 
 #### Links importantes: <br>
 
-- Calculadora de margem de erro: https://goodcalculators.com/margin-of-error-calculator/
+- Calculadora de margem de erro: https://goodcalculators.com/margin-of-error-calculator/ <br>
+- Calculadora de Z-score: https://www.calculator.net/z-score-calculator.html
 
