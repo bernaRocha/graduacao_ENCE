@@ -2,7 +2,7 @@
 Repositório para trabalhos durante minha graduação em estatística na [ENCE](https://ence.ibge.gov.br/) (2024 - ) <br>
 
 - Introdução à estatística <br>
-  .  análise exploratória de dados <br>
+  . análise exploratória de dados <br>
   . noções de probabilidade <br>
 
 #### Links importantes: <br>
