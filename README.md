@@ -1,4 +1,4 @@
-# ENCE - trabalhos
+# ENCE - Estatística
 #### Repositório para trabalhos durante minha graduação em estatística na [ENCE](https://ence.ibge.gov.br/) (2024 - ) <br>
 
 - Introdução à estatística <br>
