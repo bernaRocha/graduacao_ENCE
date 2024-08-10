@@ -4,6 +4,8 @@
 - Introdução à estatística <br>
   . Análise exploratória de dados <br>
   . Noções de probabilidade <br>
+-  Introdução à programação <br>
+  . Pseudo código e Python <br>
 
 ##### Links importantes: <br>
 
