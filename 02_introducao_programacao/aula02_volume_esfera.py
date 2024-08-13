@@ -8,7 +8,7 @@ volume.
 início
     ler(raio_da_esfera)
     volume = (4/3) * pi * raio ** 3
-    imprimi(volume)
+    imprimir(volume)
 fim
 '''
 import math
