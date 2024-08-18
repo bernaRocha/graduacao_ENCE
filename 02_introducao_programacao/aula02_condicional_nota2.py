@@ -3,7 +3,7 @@ Aula do dia 08-08-24
 
 Em pseudocódigo
 
-Início
+início
     ler(nota)
     se nota >= 7:
         imprimir('Aprovado')
@@ -12,7 +12,7 @@ Início
             imprimir('Recuperação')
         se não:
             imprimir('Reprovado')
-
+fim
 '''
 
 print('Digite a nota do aluno: ')
