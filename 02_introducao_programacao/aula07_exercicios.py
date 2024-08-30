@@ -20,7 +20,7 @@ import math
 
 n = int(input('Digite um número entre 0 e 15: '))
 
-while n > 15 or n < 0:
+while n > 15 or n <= 0:
     n = int(input('\nInválido! Digite um número entre 0 e 15: '))   
 
 n = math.factorial(n)
