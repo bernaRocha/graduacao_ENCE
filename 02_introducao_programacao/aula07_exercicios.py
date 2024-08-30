@@ -25,10 +25,10 @@ while n > 15 or n <= 0:
 
 n = math.factorial(n)
 denominador = 5
-soma = n / denominador
+soma = n / denominador  ## cada fração da equação
 
 while denominador < 1000:
     denominador += 5
-    soma = soma - (n / denominador)
+    soma = soma - (n / denominador) ## incrementação de cada fração
     
 print(f'A soma é: {soma}')
