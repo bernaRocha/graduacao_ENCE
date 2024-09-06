@@ -7,7 +7,7 @@ pertence à circunferência. O programa deve ser mantido em execução até o us
 (flag de saída).
 '''
 import math
-r = 0
+
 while True:
     r = int(input('Digite o valor do raio, (ao digitar -1 o programa encerrará): '))
     if r == -1:
