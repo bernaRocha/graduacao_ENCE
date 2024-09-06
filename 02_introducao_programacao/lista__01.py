@@ -63,3 +63,26 @@ while rakesh > zaki:
   zaki += 0.03
   i += 1
 print(i)
+
+'''
+(7) Faça um programa que leia um número inteiro e o armazene em x. Em seguida, calcule e imprima y da
+seguinte forma:
+Se x ≤ 0: y = 0
+Caso contrário: y = 1/1 + 2/3 + 3/5 + ... + x/m
+'''
+
+x = int(input('Digite um valor para x: '))
+
+numerador = 1 
+denominador = 1 
+y = numerador / denominador
+
+if x <= 0:
+    y = 0
+else: 
+    while numerador < x:
+        numerador += 1 
+        denominador += 2 
+        y += numerador / denominador
+        
+print(f'Você escolheu {x} e o somatório dá: {y}')
