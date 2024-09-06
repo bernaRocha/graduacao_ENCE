@@ -1,4 +1,23 @@
 '''
+(4) Crie um programa que peça para o usuário digitar um inteiro de 3 dígitos, armazenando-o em uma
+variável n. O programa deverá imprimir a quantidade de centenas, dezenas e unidades de n. Exemplo:
+• para n = 249, escrever: 2 centena(s), quatro dezena(s) e nove unidade(s)
+• para n = 100, escrever: 1 centena(s), 0 dezena(s) e 0 unidade(s)
+'''
+n = int(input('Digite um número com 3 digitos: '))
+n = str(n)
+while len(n) != 3:
+    n = int(input('Incorreto! Digite um número com 3 digitos: '))
+n = str(n)
+
+centena = n[0]
+dezena = n[1]
+unidade = n[2]
+
+print(f'O número {n} tem {centena} centena[s], {dezena} dezena[s] e {unidade} unidade[s]')
+
+
+'''
 Durante a aula do dia 05/09/24
 
 (5) Faça um programa que leia o raio r de uma circunferência com centro na origem (0,0), e em seguida as
