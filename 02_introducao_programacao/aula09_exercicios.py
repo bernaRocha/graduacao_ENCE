@@ -1,6 +1,6 @@
 '''
 1 - O valor aproximado de π pode ser calculado pela série:
-4 - 43 + 45 - 47 + ...
+4 - 4/3 + 4/5 - 4/7 + ...
 Calcule π usando 10.000 termos
 '''
 N = 10000
