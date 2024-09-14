@@ -1,6 +1,6 @@
 '''
-Aula do dia 05/0924
-Usando for faça um programa que peça o vlor de n
+Aula do dia 05-09-24
+Usando for faça um programa que peça o valor de n
 e calcule h = 1/1 + 1/2 + ... + 1/n
 
 '''
