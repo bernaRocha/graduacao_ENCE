@@ -86,3 +86,29 @@ else:
         y += numerador / denominador
         
 print(f'Você escolheu {x} e o somatório dá: {y}')
+
+'''
+(15) Considere uma lista w contendo n valores reais já criada em memória. Escreva o trecho de código capaz 
+de construir do zero uma outra lista u de acordo com o exemplo mostrado abaixo:
+lista w 2.5 8 4 1 ... 10
+↓
+lista u 7.5 4 12 0.5 ... 5
+Como sempre, seu programa deve funcionar para qualquer lista de reais w. Analise com calma o exemplo 
+acima e identifique o padrão que foi utilizado para criar a lista u
+'''
+
+w = [2.5, 8, 4, 1, 10]
+u = []
+aux = 1
+
+for x in w:
+    if aux == 1:
+        y = x * 3
+        aux = 0
+        
+    else:
+        y = x / 2
+        aux = 1
+    u.append(y)
+    
+print(u)
