@@ -69,3 +69,18 @@ for i in range(num_lins):
   -300     0   555   636  2000
    999  -272 -3000     0    15
 '''
+n = [[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9]]
+
+ordem = len(n)
+
+# pega os elementos da diagonal principal
+diagonal = []
+for i in range(ordem):
+    for j in range(ordem):
+        if i == j:
+            diagonal.append(n[i][j])
+
+print(f'[{n[0][0]}, {n[1][1]}, {n[2][2]}]')      # [1, 5, 9]      
+print(diagonal)                                  # [1, 5, 9]     
