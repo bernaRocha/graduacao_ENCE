@@ -1,5 +1,5 @@
 '''
-Aula do dia 12-10-24
+Aula do dia 10-10-24
 '''
 
 '''
