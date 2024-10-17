@@ -9,11 +9,12 @@ print(s2)
 
 '''
 Escreva um programa que remova o caractere da posião i de uma string s
+# > f = f.replace("imutável", "bela")
 '''
 
-palavra = str(input("Digite uma palavra  "))
+palavra = input("Digite uma palavra  ")
 posicao = int(input("Digite a posião do caractere a ser retirado da palavra  "))
-# > f = f.replace("imutável", "bela")
+
 resultado = palavra.replace(palavra[posicao - 1], '')
 print(resultado)
 '''
