@@ -7,7 +7,13 @@ for linha in f:
 
     #print(f"comprimento = {len(linha)}")
     #print(linha)
-
+'''
+Rakesh,25
+Vijay,43
+Yash,18
+Juily,51
+Vidur,39
+'''
     
 f.close()
 
@@ -27,5 +33,15 @@ for linha in f:
     elif colunas[2] == "Europa": tot_europa += 1
 
 
-print(f"Total América = {tot_america} e total Europa = {tot_europa}")
+print(f"\nTotal América = {tot_america} e total Europa = {tot_europa}")
+'''
+['sigla', 'nome', 'continente', 'extensao']
+['AR', 'Argentina', 'América', '2780']
+['BR', 'Brasil', 'América', '8511']
+['FR', 'França', 'Europa', '644']
+['IT', 'Itália', 'Europa', '301']
+['UK', 'Reino Unido', 'Europa', '244']
+
+Total América = 2 e total Europa = 3
+'''
 f.close()
