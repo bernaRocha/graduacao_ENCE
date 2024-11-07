@@ -1,4 +1,4 @@
-'''Aula 17'''
+'''Aula 17, data 05-11-24'''
 
 f = open("C:\\Program Files\\Python311\\Scripts\\arq_teste.csv")
 
