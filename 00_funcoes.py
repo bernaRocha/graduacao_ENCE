@@ -65,3 +65,13 @@ def transforma_matriz(mat):
 
 a = [[1, 2], [3, 4]]
 print(transforma_matriz(a)) # [1, 2, 3, 4]
+
+def fatorial(n):
+'''
+Função para calcular o fatorial de um valor qualquer chamado de n
+'''
+ if n < 0: return None
+
+ f = 1
+ for i in range(2,n+1): f = f * i
+ return f"O fatorial de {n} é {f}"
