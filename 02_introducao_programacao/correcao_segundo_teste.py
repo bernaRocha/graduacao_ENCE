@@ -1,6 +1,7 @@
 '''
 Correão do segundo teste
 '''
+####primeira questão###################
 
 a = [[11, 2, 22, 19],
  [50, 49, 99, 40],
@@ -31,3 +32,21 @@ def f_troca(s, i, k):
     return aux
 
 print(f_troca('perfeito', 0, 3)) # ferpeito
+
+####terceira questão###################
+
+endereco = 'c:/dados/compras.csv'
+
+arq = open(endereco)
+
+soma = 0
+for linha in arq:
+ linha = linha.rsrip()
+ colunas = linha.split(';')
+ soma = soma + float(colunas[1])
+
+arq.close()
+
+dic = {'total': soma}
+print(dic)
+ 
