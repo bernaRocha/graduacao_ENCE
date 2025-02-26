@@ -16,3 +16,30 @@ print(n) # 3  6  9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 7
 n <- 10
 vetor2 <- 5^(1:n)
 print(vetor2) # 5      25     125     625    3125   15625   78125  390625 1953125 9765625
+
+# 2 - Supondo que x<-2, escreva um comando de atribuição que 
+# calcule a seguinte expressão 3x3+2x2+6x
+
+x <- 2
+resultado <- 3 * 3 + 2 * 2 + 6*x
+print(resultado)  # 25
+
+# 3- Supondo que x<-2, y<-4, z<-8 e w<-3, 
+# determine os resultados das seguintes expressões:
+# x>y & z+y > w
+# x==y%/%2 | y^2>sqrt(z)
+# y<z & w+z%%2 < 1
+
+x <- 2
+y <- 4
+z <- 8
+w <- 3
+
+a <- x > y & z + y > w
+print(a) # FALSE
+
+b <- x == y %% 2 | y ^2 > sqrt(z)
+print(b) # TRUE
+
+c <- y < z & w + z %% 2 < 1
+print(c) # FALSE
