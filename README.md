@@ -6,7 +6,8 @@
   . Noções de probabilidade <br>
 -  Introdução à programação <br>
   . Pseudo código e Python <br>
-
+-  Estatística computacional <br>
+  . Linguagem R
 ##### Links importantes: <br>
 
 - Calculadora de margem de erro: https://goodcalculators.com/margin-of-error-calculator/ <br>
