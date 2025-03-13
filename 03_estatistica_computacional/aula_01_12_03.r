@@ -1,4 +1,4 @@
-#### Aula do dia 12-03-25 ####
+#### Aula 01 do dia 12-03-25 ####
 
 # ctrl + r para executar no R console
 # ctrl + enter no R studio
