@@ -46,4 +46,3 @@ y=seq(2,11,1)  #  [1]  2  3  4  5  6  7  8  9 10 11
 # Operadores lógicos
 x[1]==x[2] #  [1] FALSE
 (x[1]>y[1]) &(x[2]<y[2]) # [1] FALSE
-
