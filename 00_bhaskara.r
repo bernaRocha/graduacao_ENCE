@@ -5,5 +5,7 @@ bhaskara <- function(a, b, c) {
   return(cbind(x1, x2))
 }
 
-print(bhaskara(1, -4, 3))
-print(bhaskara(1, 2, -3))
+print(bhaskara(1, -4, 3))   #      x1 x2
+                            # [1,]  3  1
+print(bhaskara(1, 2, -3))   #      x1 x2
+                            # [1,]  1 -3
