@@ -42,11 +42,9 @@ print(resultado)  # 45
 # 3 Utilize os comandos do R para gerar um vetor contendo 
 # todos os inteiros de 1 até 100 que não são divisíveis por 2, 3, ou 7
 x <- seq(1:100)
-x
-x[!x %% 2 == 0 & !x %% 3 == 0 & !x %% 7 == 0]
-#  [1]  1  5 11 13 17 19 23 25 29 31 37 41 43 
-# 47 53 55 59 61 65 67 71 73 79 83 85 89 95 97
 
+x[!x %% 2 == 0 & !x %% 3 == 0 & !x %% 7 == 0]
+#  [1]  1  5 11 13 17 19 23 25 29 31 37 41 43 47 53 55 59 61 65 67 71 73 79 83 85 89 95 97
 
 # 4 - Supondo que x<-2, y<-4, z<-8 e w<-3, 
 # determine os resultados das seguintes expressões:
@@ -67,7 +65,6 @@ print(b) # TRUE
 
 c <- y < z & w + z %% 2 < 1
 print(c) # FALSE
-
 
 # 5
 
@@ -100,5 +97,8 @@ a <- sample(1000, 100)
 sum(!a %% 4 == 0)
 # [1] 80
 
-
 # 10 escreva um conjunto de comandos para determinar quais são os divisores do número 128
+
+numero <- 128
+divisores <- which(numero %% 1: numero == 0)
+print(divisores) # [1]   1   2   4   8  16  32  64 128
