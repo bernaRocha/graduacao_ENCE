@@ -39,7 +39,14 @@ x <- 2
 resultado <- 3 * 3 + 2 * 2 + 6*x
 print(resultado)  # 25
 
-# 3- Supondo que x<-2, y<-4, z<-8 e w<-3, 
+# 3 Utilize os comandos do R para gerar um vetor contendo todos os inteiros de 1 até 100 que não são divisíveis por 2, 3, ou 7
+x <- seq(1:100)
+x
+x[!x %% 2 == 0 & !x %% 3 == 0 & !x %% 7 == 0]
+#  [1]  1  5 11 13 17 19 23 25 29 31 37 41 43 47 53 55 59 61 65 67 71 73 79 83 85 89 95 97
+
+
+# 4 - Supondo que x<-2, y<-4, z<-8 e w<-3, 
 # determine os resultados das seguintes expressões:
 # x>y & z+y > w
 # x==y%/%2 | y^2>sqrt(z)
@@ -58,3 +65,10 @@ print(b) # TRUE
 
 c <- y < z & w + z %% 2 < 1
 print(c) # FALSE
+
+# 5
+
+x <- 2
+log2(x^2 + 1) + exp(4 * x + 1)
+
+# [1] 8105.406
