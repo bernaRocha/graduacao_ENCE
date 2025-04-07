@@ -105,4 +105,15 @@ notas
 # [1] 7.0 2.3 5.3
 
 
-#####################333 parei na página 16
+##################### DURANTE A AULA #####################
+
+predio <- list(sexo=sample(c("F", "M"), 50, T), idades = sample(2:70, 50, T))
+
+### a) encontre a média de idade por sexo
+
+posicaoF <- which(predio$sexo == "F")
+mean(posicaoF) # Média das mulheres do predio
+# [1] 28.5
+posicaoM <- which(predio$sexo == "M") # Média dos homens
+mean(posicaoM)
+# [1] 21
