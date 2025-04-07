@@ -74,3 +74,35 @@ aluno
 # $lingua_estrangeira
 # [1] "mandarim"
 
+#### acessando as variáveis da lista
+names(aluno)
+# [1] "nome"               "renda"              "publica"            "lingua_estrangeira"
+
+
+dados <- list(v=1:10, A = matrix(1:16, 4, 4)) # cria um vetor e uma matriz
+length(dados)
+# [1] 2
+length(dados$v)
+# [1] 10
+length(dados$A)
+# [1] 16
+
+###### Comando as.list converte para lista
+x = as.list(c("Fulano", 29, FALSE))
+
+###### Comando unlist produz um vetor com todos os componentes de uma lista
+data <- unlist(aluno)
+
+notas <- list(calculo = 7.0, algebra = 2.3, computacao = 5.3)
+notas <- unlist(notas)
+notas
+#   calculo    algebra computacao 
+#       7.0        2.3        5.3 
+
+### Apagando os nomes das variáveis
+notas <- unname(notas)
+notas
+# [1] 7.0 2.3 5.3
+
+
+#####################333 parei na página 16
