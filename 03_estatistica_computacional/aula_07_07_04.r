@@ -20,6 +20,13 @@ aluno$lingua_estrangeira <- "mandarim"
 #### adicionando uma variável a list   [2]
 aluno[[6]] <- "noturno"  # adiciona valor sem uma variável
 
+for (x in aluno){ print(x)}
+# [1] "Bernardo Monteiro Rocha"
+# [1] 37
+# [1] 3100.25
+# [1] TRUE
+# [1] "mandarim"
+# [1] "noturno"
 
 domicilio <- list(total_pessoas = 2, animais = 3, banheiro = TRUE)
 domicilio$animais
@@ -30,6 +37,9 @@ domicilio$animais_tipo
 length(domicilio)
 # [1] 4
 
+#### adicionando uma variável a list   [3]
+
+aluno[7:8] <- c(78, FALSE)
 for (x in aluno){ print(x)}
 # [1] "Bernardo Monteiro Rocha"
 # [1] 37
@@ -37,3 +47,30 @@ for (x in aluno){ print(x)}
 # [1] TRUE
 # [1] "mandarim"
 # [1] "noturno"
+# [1] 78
+# [1] 0
+
+#### adicionando uma variável a list   [4]
+aluno = c(aluno, list(q=9,w="Z")) # variáveis são adicionadas ao final da lista original
+
+##### EXCLUINDO VALORES
+# 1
+aluno[7:8] <- NULL
+# 2
+aluno$idade <- NULL
+# 3
+aluno[[5]] <- NULL
+
+aluno
+# $nome
+# [1] "Bernardo Monteiro Rocha"
+
+# $renda
+# [1] 3100.25
+
+# $publica
+# [1] TRUE
+
+# $lingua_estrangeira
+# [1] "mandarim"
+
