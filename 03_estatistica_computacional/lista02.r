@@ -17,6 +17,17 @@ segunda_matriz
 matrix(2^(1:9), nrow = 3, ncol = 3,byrow = T)
 
 # Questão 2
+
+##### elemento minmax é o maior elemento na linha onde se encontra o menor elmento
 M <- matrix(sample(20,16), 4, 4)
 
 # Questão 3
+
+# Questão 6
+V <- sample(20,40, replace = TRUE)
+# [1] 12  2  3 12  1  9 16 13  6 14 12 20  6  2  2 13  3  2 12  7  7 10 14  8 16
+# [26]  9 19  6 10  7  8 11  5 15 11 15 14 20 17 14
+unique(V)
+# [1] 12  2  3  1  9 16 13  6 14 20  7 10  8 19 11  5 15 17
+prod(unique(V))
+# [1] 3.379031e+16
