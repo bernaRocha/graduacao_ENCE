@@ -31,3 +31,13 @@ unique(V)
 # [1] 12  2  3  1  9 16 13  6 14 20  7 10  8 19 11  5 15 17
 prod(unique(V))
 # [1] 3.379031e+16
+
+# Questão 7
+X <- sample(20, 40, replace = TRUE)
+Y <- sample(20, 40, replace = TRUE)
+
+intersecao <- intersect(X,Y)
+intersecao
+# [1]  7 15 17 19 14 16  2  8 13  9  5  3 10  4 18
+cumsum(intersecao)
+# [1]   7  22  39  58  72  88  90  98 111 120 125 128 138 142 160
