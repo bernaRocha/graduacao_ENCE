@@ -77,3 +77,8 @@ names(dados)
 
 is.data.frame(dados) # Verifica se a variável é um dataframe
 # [1] TRUE
+
+table(dados$idade)
+
+#21 22 23 26 30 
+# 1  3  2  2  2 
