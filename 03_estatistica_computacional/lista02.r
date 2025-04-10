@@ -41,3 +41,9 @@ intersecao
 # [1]  7 15 17 19 14 16  2  8 13  9  5  3 10  4 18
 cumsum(intersecao)
 # [1]   7  22  39  58  72  88  90  98 111 120 125 128 138 142 160
+
+# Questão 10
+
+q <- c(1, 5, 10, 20, 50, 100)
+posicao <- combn(length(q), 2)
+apply(matrix(q[posicao], nrow=2), 2, mean)
