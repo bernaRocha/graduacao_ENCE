@@ -1,7 +1,7 @@
 ###### Adiantando a apostila da aula 6 
 # https://aulasence.ibge.gov.br/Bacharelado/Daniela%20Polessa%20Paula/Estat%C3%ADstica%20Computacional%20I/Computacional_2022/Aula%206R.pdf
 
-# Fatores são um tipo espcial de vetoers orientados para armazenar variáveis categóricas
+# Fatores são um tipo especial de vetoers orientados para armazenar variáveis categóricas
 
 
 tipo_partido <- factor(c('esq', 'dir', 'esq', 'dir'))
@@ -84,4 +84,40 @@ classificacao
 # [1] a a a b a a b b b b b a b b C C C C
 # Levels: a b C
 
+######### Definindo previamente os níveis
 
+conceito <- factor(c('a', 'b', 'c', 'a'), levels <- c('a', 'b', 'c', 'd'))
+conceito
+# [1] a b c a
+# Levels: a b c d
+
+conceito[5:9] <- c('a', 'd', 'd', 'b', 'a')
+conceito
+# [1] a b c a a d d b a
+# Levels: a b c d
+
+
+######### Fazendo tabulação e cruzada
+
+sexo <- factor(c('m', 'f', 'm', 'f', 'f', 'f'))
+sexo
+# [1] m f m f f f
+# Levels: f m
+
+table(sexo) # Frequência absoluta
+sexo
+# f m
+# 4 2
+
+grau_instrucao <- factor(c('1o', '1o', '2o', '3o', '2o', '1o'))
+grau_instrucao
+# [1] 1o 1o 2o 3o 2o 1o
+# Levels: 1o 2o 3o
+
+table(sexo, grau_instrucao)
+#    grau_instrucao
+# sexo 1o 2o 3o
+#   f  2  1  1
+#   m  1  1  0
+
+##### pág 8
