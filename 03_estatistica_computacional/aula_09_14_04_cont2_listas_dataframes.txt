@@ -1,0 +1,18 @@
+######### Aula do dia 14/04/25
+
+### códigos em Aula_6_notebook.Rmd
+
+adicionar variável no dataframe
+dataframe$nome da nova variável <- dados
+dados_alunos$IMC <- sample(seq(18, 30, 2.1), 10, T)
+
+Excluindo coluna , usa-se o NULL também
+
+dados_alunos$periodo <- NULL
+
+fix(dataframe) - abre uma janela tipo excel, serve para alterações manuais
+
+View(dataframe) - visualiza o dataframe no RStudio
+
+
+dplyr tidyverse
