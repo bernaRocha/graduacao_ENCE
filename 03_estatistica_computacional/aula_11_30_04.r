@@ -17,3 +17,12 @@ ifelse(x + 10 > 0, sqrt(x + 10), 'raiz complexa') # [1] 4.358899
 if (x[2] >= -2 & (x[1] < -2)) #### O resto tá no aula7 notebook do repositório
 
   
+for(i in 1:10){
+  print(i ^2 )
+} # [1] 1 [1] 4 [1] 9 [1] 16 [1] 25 [1] 36 [1] 49 [1] 64 [1] 81 [1] 100
+
+########### Exemplo 3  
+numero <- scan()
+divisores <- NULL
+
+for(i in 1: numero) {if(numero%%i==0)}
