@@ -28,7 +28,8 @@ medias <- c(mean(d$n1), mean(d$n2)) # [1] 4.932 4.951
 
 # (c) Listar os números dos candidatos que tiveram a média menor do que cinco.
 
-menor_5 <- list(df_filtrado$candidatos)
+menor_5 <- subset(d, media < 5)
+##### Falta terminar
 
 # (d) Imprimir o total de candidatos que tiveram a média maior ou igual a sete.
 
