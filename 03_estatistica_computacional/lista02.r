@@ -18,10 +18,14 @@ matrix(2^(1:9), nrow = 3, ncol = 3,byrow = T)
 
 # Questão 2
 
-##### elemento minmax é o maior elemento na linha onde se encontra o menor elmento
+##### elemento minmax é o maior elemento na linha onde se encontra o menor elemento
 M <- matrix(sample(20,16), 4, 4)
+minimo <- min(M)
+minimo
 
 # Questão 3
+# Questão 4
+# Questão 5
 
 # Questão 6
 V <- sample(20,40, replace = TRUE)
@@ -41,3 +45,24 @@ intersecao
 # [1]  7 15 17 19 14 16  2  8 13  9  5  3 10  4 18
 cumsum(intersecao)
 # [1]   7  22  39  58  72  88  90  98 111 120 125 128 138 142 160
+
+# Questão 8
+# Questão 9
+# Questão 10
+
+q <- c(1, 5, 10, 20, 50, 100)
+
+tamanho <- length(q)
+
+somatorio <- list()
+
+for (i in 2:(tamanho - 1)) {
+    j <- tamanho - i + 1
+    soma_grupo <- numeric(j)
+
+    for(k in 1:j){
+        soma_grupo[k] <- sum(q[k: (k + i - 1)])
+    }
+}
+
+print(soma_grupo)
