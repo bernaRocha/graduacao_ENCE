@@ -1,0 +1,32 @@
+---
+title: "Trabalho final - COVID 19"
+output: html_document
+date: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Relatório sobre a pandemia da COVID 19 
+
+Trabalho final da matéria Estatística computacional <br><br>
+Grupo formado por: <br>
+Bernardo Monteiro Rocha       - 202410221-26 <br>
+Diogo Barbosa Silva Sousa     - 202210091-32 <br>
+
+```{r cars}
+library("readxl")
+dados <- read_excel("dados_gerais_filtrados_sem_duplicatas.xlsx")
+View(dados)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
