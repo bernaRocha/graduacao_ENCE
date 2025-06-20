@@ -1,32 +1,64 @@
 ---
-title: "Trabalho final - COVID 19"
+title: "Trabalho final sobre a pandemia da COVID 19"
 output: html_document
-date: ""
+date: "`r Sys.setlocale('LC_TIME', 'pt_BR.UTF-8'); format(Sys.Date(), '%d de %B de %Y')`"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(pagedown)
+library(DT)
+library(readxl)
+library(flextable)
+library(plotly)
+library(summarytools)
+library(ggplot2)
+library(ggpubr)
 ```
 
-## Relatório sobre a pandemia da COVID 19 
+# Relatório
 
-Trabalho final da matéria Estatística computacional <br><br>
+Disciplina de Estatística computacional <br><br>
 Grupo formado por: <br>
 Bernardo Monteiro Rocha       - 202410221-26 <br>
 Diogo Barbosa Silva Sousa     - 202210091-32 <br>
 
-```{r cars}
+```{r, include=FALSE}
 library("readxl")
 dados <- read_excel("dados_gerais_filtrados_sem_duplicatas.xlsx")
 View(dados)
+dim(dados)
+sort(unique(dados$data))
+
+dados2 <- read_excel("dados_gerais_filtrados_sem_duplicatas_regioes.xlsx")
+View(dados2)
+
 ```
 
-## Including Plots
+# 1. Introdução
 
-You can also embed plots, for example:
+Este trabalho tem por objetivo analisar a pandemia da COVID 19 no intervalo entre 27/03/2020 até 25/06/2020 e comparar as regiões para ver a periculosidade em cada estado.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+# 2. Materiais e Métodos
+
+## 2.1. População de Estudo
+
+A população é um dataset que abrange apenas o Brasil no intervalo de tempo citado na introdução. A fonte é o site openDataSUS.
+
+## 2.2. Análise
+
+Foram analisados os casos acumulados, óbitos e a proporção com a população para verificar o grau de periculosidade nos estados.
+
+## 2.3. Analise estatística
+
+Foram criadas as variáveis obitosAcumuladoPelaPopulacao e casosAcumuladosPelaPopulacao para criar as taxas de óbitos e casos pela população.
+
+```{r, include=FALSE}
+# Criando a variável de taxa de óbitos pela população (por 100 mil habitantes)
+dados$obitosAcumuladoPelaPopulacao <- (dados$obitosAcumulado / dados$populacaoTCU2019) * 100000
+
+# Criando a variável de taxa de casos pela população (por 100 mil habitantes)
+dados$casosAcumuladosPelaPopulacao <- (dados$casosAcumulado / dados$populacaoTCU2019) * 100000
+
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
