@@ -1,7 +1,10 @@
 ---
 title: "Trabalho final sobre a pandemia da COVID 19"
-output: html_document
-date: "`r Sys.setlocale('LC_TIME', 'pt_BR.UTF-8'); format(Sys.Date(), '%d de %B de %Y')`"
+output:
+  pdf_document: default
+  html_document: default
+date: "`r Sys.setlocale('LC_TIME', 'pt_BR.UTF-8'); format(Sys.Date(), '%d de %B de
+  %Y')`"
 ---
 
 ```{r setup, include=FALSE}
@@ -62,3 +65,34 @@ dados$obitosAcumuladoPelaPopulacao <- (dados$obitosAcumulado / dados$populacaoTC
 dados$casosAcumuladosPelaPopulacao <- (dados$casosAcumulado / dados$populacaoTCU2019) * 100000
 
 ```
+## 2.4. Histogramas
+
+```{r, echo=FALSE, warning=FALSE}
+
+# Para remover os warnings
+dados$casosAcumuladosPelaPopulacao <- abs(dados$casosAcumuladosPelaPopulacao)
+
+
+# Criando os histogramas
+dados$data <- as.Date(dados$data)
+
+ggplot(dados, aes(x = data, y = casosAcumuladosPelaPopulacao)) +
+  geom_col() +  # Usando colunas para representar os valores
+  facet_wrap(~ regiao, ncol = 2) +  # Divide em painéis por região
+  labs(title = "Casos acumulados por 100 mil habitantes por região",
+       x = "Data",
+       y = "Casos por 100 mil habitantes") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(dados, aes(x = data, y = casosAcumuladosPelaPopulacao, fill = regiao)) +
+  geom_area(alpha = 0.6) +
+  facet_wrap(~ regiao, ncol = 2, scales = "free_y") +
+  labs(title = "Evolução de casos por 100 mil habitantes por região",
+       x = "",
+       y = "Casos por 100 mil habitantes") +
+  theme_minimal() +
+  theme(legend.position = "none") 
+
+```
+
