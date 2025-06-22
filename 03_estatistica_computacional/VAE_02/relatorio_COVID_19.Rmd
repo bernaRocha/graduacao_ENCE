@@ -1,8 +1,8 @@
 ---
 title: "Trabalho final sobre a pandemia da COVID 19"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 date: "`r Sys.setlocale('LC_TIME', 'pt_BR.UTF-8'); format(Sys.Date(), '%d de %B de
   %Y')`"
 ---
@@ -96,3 +96,30 @@ ggplot(dados, aes(x = data, y = casosAcumuladosPelaPopulacao, fill = regiao)) +
 
 ```
 
+## 2.5 Resumindo dados
+
+Resumo na semana 26 da pandemia
+
+```{r, echo=FALSE, warning=FALSE}
+tabela_resumo <- dados %>%
+  filter(semanaEpi == 26) %>%
+  group_by(regiao) %>%
+  summarise(
+    Populacao_Total = sum(populacaoTCU2019, na.rm = TRUE),
+    Casos_Acumulados = sum(casosAcumulado, na.rm = TRUE),
+    Obitos_Acumulados = sum(obitosAcumulado, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+tabela_resumo
+```
+## 2.6 Taxa de periculosidade
+
+Calculamos aqui a razão entre os casos acumulados e os óbitos
+
+```{r, echo=FALSE, warning=FALSE}
+tabela_com_taxa <- tabela_resumo %>%
+  mutate(taxa_periculosidade = Casos_Acumulados / Obitos_Acumulados) %>%
+  select(regiao, Populacao_Total, Casos_Acumulados, Obitos_Acumulados, taxa_periculosidade)
+tabela_com_taxa
+```
