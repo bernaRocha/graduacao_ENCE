@@ -47,7 +47,7 @@ Este trabalho tem por objetivo analisar a pandemia da COVID 19 no intervalo entr
 
 ## 2.1. População de Estudo
 
-A população é um dataset que abrange apenas o Brasil no intervalo de tempo citado na introdução. A fonte é o site openDataSUS.
+A população é um dataset que abrange a pandemia da COVID 19 apenas no território do Brasil no intervalo de tempo citado na introdução. A fonte é o site openDataSUS.
 
 ## 2.2. Análise
 
@@ -55,7 +55,7 @@ Foram analisados os casos acumulados, óbitos e a proporção com a população 
 
 ## 2.3. Analise estatística
 
-Foram criadas as variáveis obitosAcumuladoPelaPopulacao e casosAcumuladosPelaPopulacao para criar as taxas de óbitos e casos pela população.
+Foram criadas as variáveis obitosAcumuladoPelaPopulacao e casosAcumuladosPelaPopulacao para criar as taxas de óbitos e casos pela população. Fizemos histogramas para medir as variações e tabelas resumindo os dados.
 
 ```{r, include=FALSE}
 # Criando a variável de taxa de óbitos pela população (por 100 mil habitantes)
@@ -65,13 +65,10 @@ dados$obitosAcumuladoPelaPopulacao <- (dados$obitosAcumulado / dados$populacaoTC
 dados$casosAcumuladosPelaPopulacao <- (dados$casosAcumulado / dados$populacaoTCU2019) * 100000
 
 ```
+
 ## 2.4. Histogramas
 
 ```{r, echo=FALSE, warning=FALSE}
-
-# Para remover os warnings
-dados$casosAcumuladosPelaPopulacao <- abs(dados$casosAcumuladosPelaPopulacao)
-
 
 # Criando os histogramas
 dados$data <- as.Date(dados$data)
@@ -85,6 +82,7 @@ ggplot(dados, aes(x = data, y = casosAcumuladosPelaPopulacao)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+# evolução temporal por região (linhas temporais)
 ggplot(dados, aes(x = data, y = casosAcumuladosPelaPopulacao, fill = regiao)) +
   geom_area(alpha = 0.6) +
   facet_wrap(~ regiao, ncol = 2, scales = "free_y") +
@@ -115,7 +113,7 @@ tabela_resumo
 ```
 ## 2.6 Taxa de periculosidade
 
-Calculamos aqui a razão entre os casos acumulados e os óbitos
+Calculamos a taxa de periculosidade pela razão entre os casos acumulados e os óbitos
 
 ```{r, echo=FALSE, warning=FALSE}
 tabela_com_taxa <- tabela_resumo %>%
@@ -123,3 +121,6 @@ tabela_com_taxa <- tabela_resumo %>%
   select(regiao, Populacao_Total, Casos_Acumulados, Obitos_Acumulados, taxa_periculosidade)
 tabela_com_taxa
 ```
+
+
+
