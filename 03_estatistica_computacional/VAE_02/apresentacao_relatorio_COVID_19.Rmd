@@ -1,0 +1,249 @@
+---
+title: "Covid-19"
+author: "Bernardo Monteiro Rocha - 202410221-26 <br> Diogo Barbosa Silva Sousa - 202210091-32"
+output: ioslides_presentation
+date: "`r Sys.setlocale('LC_TIME', 'pt_BR.UTF-8'); format(Sys.Date(), '%d de %B de %Y')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+
+# Baixar pacotes, caso ainda não tenham sido baixados
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(readxl)) install.packages("readxl")
+if(!require(summarytools)) install.packages("summarytools")
+if(!require(ggplot2)) install.packages("ggplot2")
+
+# Carregar pacotes
+library(dplyr)
+library(readxl)
+library(summarytools)
+library(ggplot2)
+
+
+# Dados a serem carregados:
+dados <- read_excel("dados_gerais_filtrados_sem_duplicatas.xlsx")
+View(dados)
+
+# Criando a variável de taxa de óbitos pela população (por 100 mil habitantes)
+dados$obitosAcumuladoPelaPopulacao <- (dados$obitosAcumulado / dados$populacaoTCU2019) * 100000
+
+# Criando a variável de taxa de casos pela população (por 100 mil habitantes)
+dados$casosAcumuladosPelaPopulacao <- (dados$casosAcumulado / dados$populacaoTCU2019) * 100000
+
+```
+
+## Introdução
+
+Este trabalho tem por objetivo analisar a pandemia da COVID 19 no intervalo entre 27/03/2020 até 25/06/2020, comparar as regiões para ver a periculosidade em cada local e a relação entre os número de infectados e óbitos. Utilizamos a linguagem R para a produção deste relatório.
+
+## Materiais e Recursos
+
+Utilizamos dados do (DATASUS)[https://opendatasus.saude.gov.br/dataset] que foi fornecido a nós através de uma planilha no excel no arquivo "HIST_PAINEL_COVIDBR_25jun2020.xlsx" pela nossa professora de Estatística Computacional 1 a Doutora Daniela Polessa.
+
+## Preparação dos dados
+```
+1 - Excluí todas as linhas que possuiam dados vazios
+
+2 - Excluí as colunas vazias Recuperadonovos, emAcompanhamentoNovos
+
+3 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"10.139(17)" para "10139" para se adequar aos outros dados que estavam 
+em formato de números
+
+4 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"102.400(7)" para "102400" para se adequar aos outros dados que estavam 
+em formato de números
+
+5 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"13540 (18)" para "13540" para se adequar aos outros dados que estavam 
+em formato de números
+
+```
+
+## Preparação dos dados (Parte 1)
+
+```
+6 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"122.197(6)" para "122197" para se adequar aos outros dados que estavam 
+em formato de números
+
+7 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"12.123(8)" para "12123" para se adequar aos outros dados que estavam 
+em formato de números
+
+8 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"15.221(12)" para "15221" para se adequar aos outros dados que estavam 
+em formato de números
+
+9 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"15.895(10)" para "15895" para se adequar aos outros dados que estavam 
+em formato de números
+
+```
+## Preparação dos dados (Parte 2)
+
+```
+10 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"16.256(4)" para "16256" para se adequar aos outros dados que estavam 
+em formato de números
+
+11 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"16.979(15)" para "16979" para se adequar aos outros dados que estavam 
+em formato de números
+
+12 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"25.156(3)" para "25156" para se adequar aos outros dados que estavam 
+em formato de números
+
+13 - Na coluna populacaoTCU2019 alterei os dados que estavam escritos 
+"32.105(2)" para "32105" para se adequar aos outros dados que estavam 
+em formato de números
+```
+## Preparação dos dados (Parte 3)
+
+```
+Foram criadas as variáveis obitosAcumuladoPelaPopulacao,  
+casosAcumuladosPelaPopulacao para criar as taxas de óbitos e 
+casos pela população. Fizemos histogramas para medir as variações e
+tabelas resumindo os dados.
+
+obitosAcumuladoPelaPopulacao = (obitosAcumulado / populacaoTCU2019) * 100000 
+casosAcumuladosPelaPopulacao = (casosAcumulado / populacaoTCU2019) * 100000
+```
+
+## Slide 1
+
+```{r  slide1, echo = FALSE}
+
+dados_semana13 <- dados %>% 
+  filter(semanaEpi == 13)
+
+ggplot(dados_semana13, aes(x = regiao, y = casosAcumulado, fill = regiao)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Casos Acumulados de COVID-19 por Região - Semana 13",
+       x = "Região",
+       y = "Casos Acumulados",
+       fill = "Região") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.6))  # Inclina os rótulos do eixo X
+
+```
+
+## Slide 2
+
+```{r  slide2, echo = FALSE}
+
+dados_semana26 <- dados %>% 
+  filter(semanaEpi == 26)
+
+ggplot(dados_semana26, aes(x = regiao, y = casosAcumulado, fill = regiao)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Casos Acumulados de COVID-19 por Região - Semana 26",
+       x = "Região",
+       y = "Casos Acumulados",
+       fill = "Região") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.6))  
+
+```
+## Slide 3
+
+```{r  slide3, echo = FALSE, warning=FALSE}
+
+dados_semana13 <- dados %>% 
+  filter(semanaEpi == 13)
+
+ggplot(dados_semana13, aes(x = regiao, y = obitosAcumuladoPelaPopulacao, fill = regiao)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Taxa de óbitos acumulados por Região e população - Semana 13",
+       x = "Região",
+       y = "Óbitos Acumulados",
+       fill = "Região") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.6))  
+
+```
+
+## Slide 4
+
+```{r  slide4, echo = FALSE, warning=FALSE}
+
+dados_semana26 <- dados %>% 
+  filter(semanaEpi == 26)
+
+ggplot(dados_semana26, aes(x = regiao, y = obitosAcumuladoPelaPopulacao, fill = regiao)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Taxa de óbitos acumulados por Região e população - Semana 26",
+       x = "Região",
+       y = "Casos Acumulados",
+       fill = "Região") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.6))  
+
+```
+
+## Slide 5
+
+```{r, slide5, echo=FALSE, warning=FALSE}
+tabela_resumo <- dados %>%
+  filter(semanaEpi == 13) %>%  
+  group_by(regiao) %>%
+  summarise(
+    Casos_Acumulados = sum(casosAcumulado, na.rm = TRUE),
+    Obitos_Acumulados = sum(obitosAcumulado, na.rm = TRUE),
+    # Calculando taxa de periculosidade (casos por 100k hab)
+    periculosidade = (sum(obitosAcumulado, na.rm = TRUE) / sum(populacaoTCU2019, na.rm = TRUE)) * 100000
+  ) %>%
+  ungroup()
+tabela_resumo
+
+```
+Aqui temos um resumo dos dados na semana 13 mostrando a periculosidade na época, calculamos a razão entre os obitos acumulados e a população. A região sudeste era a mais afetada na época, novamente devido os primeiros casos e a densidade demográfica.
+
+## Slide 6
+
+```{r, slide6, echo=FALSE, warning=FALSE}
+
+tabela_resumo <- dados %>%
+  filter(semanaEpi == 23) %>%  
+  group_by(regiao) %>%
+  summarise(
+    Casos_Acumulados = sum(casosAcumulado, na.rm = TRUE),
+    Obitos_Acumulados = sum(obitosAcumulado, na.rm = TRUE),
+    # Calculando taxa de periculosidade (casos por 100k hab)
+    periculosidade = (sum(obitosAcumulado, na.rm = TRUE) / sum(populacaoTCU2019, na.rm = TRUE)) * 100000
+  ) %>%
+  ungroup()
+tabela_resumo
+
+```
+Na semana 26 vemos o salto na região norte, reflexo da ampliação de testes como afirma a matéria do link. 
+
+https://g1.globo.com/am/amazonas/noticia/2020/05/12/em-tres-dias-am-supera-recorde-de-novos-casos-de-covid-19-em-um-unico-e-chega-a-14168-infectados-ja-sao-1098-mortes.ghtml
+
+
+## Slide 7
+
+```{r  slide7, echo = FALSE, warning=FALSE}
+
+```
+
+Conclusões:
+
+Fizemos várias comparações entre a semana 13 e a semana 26 da pandemia.
+
+Analisando o número de casos absolutos, na semana 13 fica claro que a região sudeste foi a mais afetada, o primeiro caso foi em São Paulo[1] e por ser uma região muito povoada junto do Rio de Janeiro isso acabou puxando os números de casos. Ao chegar na semana 26 a região nordeste se mostrou tão afetada quanto.
+
+
+Após isso calculamos a razão de óbitos pela população, a região nordeste foi a mais afetada, possivelmente pelo acesso à saúde e informações sobre a pandemia em si que ainda era uma novidade na data. 
+## Slide 8
+
+```{r  slide8, echo = FALSE, warning=FALSE}
+
+```
+Na semana 26 as regiões norte e sudeste começaram a se agravar e a nordeste continuou com uma taxa alta.
+
+Links: 
+1 https://www.gov.br/saude/pt-br/assuntos/noticias/2020/fevereiro/brasil-confirma-primeiro-caso-de-novo-coronavirus
